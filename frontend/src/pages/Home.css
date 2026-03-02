@@ -1,0 +1,152 @@
+/* Home.css */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%); /* Vibrant gradient */
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background animation */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10%);
+  background-size: 50px 50px;
+  animation: bg-move 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes bg-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -50px); }
+}
+
+.home-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.home-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.home-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem; /* Matches Dashboard.css */
+  font-weight: bold;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.home-button {
+  width: 200px; /* Fixed width for all buttons */
+  padding: 12px; /* Consistent height */
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button {
+  background-color: #3498db; /* Primary blue */
+  width: 200px; /* Explicitly same as home-button */
+  padding: 12px; /* Ensure same height */
+}
+
+.login-button:hover {
+  background-color: #4CAF50; /* Matches Dashboard hover */
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.register-button {
+  background-color: #e67e22; /* Orange for contrast */
+  width: 200px; /* Explicitly same as home-button */
+  padding: 12px; /* Ensure same height */
+}
+
+.register-button:hover {
+  background-color: #4CAF50; /* Consistent hover */
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.home-button:active {
+  transform: scale(1);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1.5rem;
+  }
+
+  .home-card {
+    padding: 1.5rem;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem; /* Matches Dashboard mobile */
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .home-button,
+  .login-button,
+  .register-button {
+    width: 180px; /* Matches Dashboard mobile */
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-title {
+    font-size: 3rem;
+  }
+
+  .home-button,
+  .login-button,
+  .register-button {
+    width: 220px; /* Matches Dashboard desktop */
+    padding: 14px;
+    font-size: 1.2rem;
+  }
+}
