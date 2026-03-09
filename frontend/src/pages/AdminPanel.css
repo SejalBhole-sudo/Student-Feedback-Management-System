@@ -1,0 +1,217 @@
+/* AdminPanel.css */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Subtle background animation */
+  div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10%);
+    background-size: 50px 50px;
+    animation: bg-move 20s linear infinite;
+    opacity: 0.3;
+  }
+  
+  @keyframes bg-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, -50px); }
+  }
+  
+  div > div {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
+    max-width: 800px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  div > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  input {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  button {
+    width: 200px;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #4CAF50;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: scale(1);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    width: 100%;
+  }
+  
+  li {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid #3498db;
+  }
+  
+  li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  li strong {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  li br {
+    display: block;
+    margin: 0.3rem 0;
+  }
+  
+  li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    div {
+      padding: 1.5rem;
+    }
+  
+    div > div {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    input {
+      max-width: 100%;
+      padding: 10px;
+      font-size: 0.9rem;
+      margin: 0.4rem 0;
+    }
+  
+    button {
+      width: 180px;
+      padding: 10px;
+      font-size: 1rem;
+      margin: 0.4rem 0;
+    }
+  
+    li {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    li strong {
+      font-size: 1rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 3rem;
+    }
+  
+    input {
+      max-width: 300px;
+      padding: 14px;
+      font-size: 1.1rem;
+    }
+  
+    button {
+      width: 220px;
+      padding: 14px;
+      font-size: 1.2rem;
+    }
+  
+    li {
+      padding: 2rem;
+    }
+  
+    li strong {
+      font-size: 1.3rem;
+    }
+  }
